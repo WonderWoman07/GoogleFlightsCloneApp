@@ -9,7 +9,6 @@ function App() {
 
   const handleSearch = async (formData) => {
     console.log("form data to be submitted to API : ", formData);
-    // const data = await searchFlights(formData);
     const res = await fetch('/.netlify/functions/searchFlights', {
       method: 'POST',
       body: JSON.stringify({

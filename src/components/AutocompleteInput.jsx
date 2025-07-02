@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const API_HOST = "sky-scrapper.p.rapidapi.com";
 
 const airportCache = new Map();
 
