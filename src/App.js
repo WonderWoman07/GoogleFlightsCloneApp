@@ -1,13 +1,12 @@
 import React, {useState} from "react";
 import "./App.css";
 import FlightResults from "./components/FlightResults";
-import Loader from "./components/Loader";
 import SearchForm from "./components/SearchForm";
 const mockData = require("../src/mockFlights.json");
 
 function App() {
   const [flightsResults, setFlightResults] = useState(null);
-  const [loader, setLoader] = useState(false);
+
   const handleSearch = async (formData) => {
     const res = await fetch('/.netlify/functions/searchFlights', {
       method: 'POST',
@@ -22,9 +21,7 @@ function App() {
       }),
     });
     const data = await res.json();
-    setLoader(!loader);
     setFlightResults(mockData || []);
-    setLoader(!loader);
   };
 
   return (
@@ -33,7 +30,7 @@ function App() {
         Spotter Flights
       </h1>
       <SearchForm onSearch={handleSearch} />
-      {loader ? <Loader/> : <FlightResults results={flightsResults}/> }
+      {flightsResults && <FlightResults results={flightsResults} />}
     </div>
   );
 }
