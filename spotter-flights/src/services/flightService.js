@@ -1,7 +1,6 @@
 import axios from "axios";
 
 const API_HOST = "sky-scrapper.p.rapidapi.com";
-const API_KEY = "10005c8679msh94e0517070a360cp1682b7jsnb6cf236d124e";
 
 const searchFlights = async ({
   from,
@@ -33,7 +32,7 @@ const searchFlights = async ({
           countryCode: "US",
         },
         headers: {
-          "X-RapidAPI-Key": API_KEY,
+          "X-RapidAPI-Key": process.env.RAPIDAPI_KEY,
           "X-RapidAPI-Host": API_HOST,
         },
       }

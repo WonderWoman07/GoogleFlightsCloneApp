@@ -1,10 +1,8 @@
 import React, {useState} from "react";
-
 import "./App.css";
 import FlightResults from "./components/FlightResults";
 import SearchForm from "./components/SearchForm";
-import { handler } from "./netlify/functions/searchFlights";
-import searchFlights from "./services/flightService";
+
 
 function App() {
   const [flightsResults, setFlightResults] = useState(null);

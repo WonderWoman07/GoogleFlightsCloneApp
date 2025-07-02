@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 const API_HOST = "sky-scrapper.p.rapidapi.com";
-const API_KEY = "10005c8679msh94e0517070a360cp1682b7jsnb6cf236d124e"; // Replace this
 
 const airportCache = new Map();
 
@@ -29,24 +28,14 @@ const AutocompleteInput = ({ label, onSelect }) => {
     }
 
     try {
-      const res = await axios.get(
-        // `https://${API_HOST}/api/v1/flights/searchAirport`,
-        {
-          params: {
-            query: lower,
-            locale: "en-US",
-          },
-          headers: {
-            "X-RapidAPI-Key": API_KEY,
-            "X-RapidAPI-Host": API_HOST,
-          },
-        }
-      );
+      const res = await axios.get(`/.netlify/functions/searchAirport`, {
+        params: { query: lower },
+      });
       airportCache.set(lower, res.data.data);
       setSuggestions(res.data.data);
       setIsDropdownOpen(true);
     } catch (error) {
-      console.log("Autocomplete API error : ", error);
+      console.log("Autocomplete API error:", error);
     }
   };
 
