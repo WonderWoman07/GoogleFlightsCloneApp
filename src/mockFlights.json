@@ -1,0 +1,88 @@
+[
+  {
+    "price": {
+      "formatted": "₹3,500"
+    },
+    "legs": [
+      {
+        "origin": {
+          "displayCode": "BOM"
+        },
+        "destination": {
+          "displayCode": "PNQ"
+        },
+        "departure": "2025-07-04T08:00:00",
+        "arrival": "2025-07-04T09:00:00",
+        "durationInMinutes": 60,
+        "carriers": {
+          "marketing": [
+            {
+              "logoUrl": "https://logos-world.net/wp-content/uploads/2020/11/IndiGo-Logo.png"
+            }
+          ]
+        }
+      },
+      {
+        "origin": {
+          "displayCode": "PNQ"
+        },
+        "destination": {
+          "displayCode": "BOM"
+        },
+        "departure": "2025-07-07T18:00:00",
+        "arrival": "2025-07-07T19:00:00",
+        "durationInMinutes": 60,
+        "carriers": {
+          "marketing": [
+            {
+              "logoUrl": "https://logos-world.net/wp-content/uploads/2020/11/IndiGo-Logo.png"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "price": {
+      "formatted": "₹4,200"
+    },
+    "legs": [
+      {
+        "origin": {
+          "displayCode": "BOM"
+        },
+        "destination": {
+          "displayCode": "PNQ"
+        },
+        "departure": "2025-07-04T12:30:00",
+        "arrival": "2025-07-04T13:30:00",
+        "durationInMinutes": 60,
+        "carriers": {
+          "marketing": [
+            {
+              "logoUrl": "https://logos-world.net/wp-content/uploads/2020/11/Air-India-Logo.png"
+            }
+          ]
+        }
+      },
+      {
+        "origin": {
+          "displayCode": "PNQ"
+        },
+        "destination": {
+          "displayCode": "BOM"
+        },
+        "departure": "2025-07-07T15:00:00",
+        "arrival": "2025-07-07T16:00:00",
+        "durationInMinutes": 60,
+        "carriers": {
+          "marketing": [
+            {
+              "logoUrl": "https://logos-world.net/wp-content/uploads/2020/11/Air-India-Logo.png"
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import "./App.css";
 import FlightResults from "./components/FlightResults";
 import SearchForm from "./components/SearchForm";
-
+const mockData = require("../src/mockFlights.json");
 
 function App() {
   const [flightsResults, setFlightResults] = useState(null);
@@ -23,7 +23,7 @@ function App() {
     });
     const data = await res.json();
     console.log("------------ API response ----------- : ", data);
-    setFlightResults(data?.data?.itineraries || []);
+    setFlightResults(mockData || []);
   };
 
   return (

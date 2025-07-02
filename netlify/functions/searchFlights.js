@@ -1,4 +1,5 @@
 const axios = require("axios");
+const mockData = require("../../src/mockFlights.json");
 
 exports.handler = async (event) => {
   const {
@@ -37,7 +38,7 @@ exports.handler = async (event) => {
     const response = await axios.request(options);
     return {
       statusCode: 200,
-      body: JSON.stringify(response.data),
+      body: JSON.stringify(mockData),
     };
   } catch (error) {
     return {
