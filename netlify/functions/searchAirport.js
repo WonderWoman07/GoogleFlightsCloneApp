@@ -11,7 +11,7 @@ exports.handler = async function (event) {
 
   const options = {
     method: "GET",
-    // url: "https://sky-scrapper.p.rapidapi.com/api/v1/flights/searchAirport",
+    url: "https://sky-scrapper.p.rapidapi.com/api/v1/flights/searchAirport",
     params: {
       query,
       locale: "en-US",

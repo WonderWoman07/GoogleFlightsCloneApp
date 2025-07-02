@@ -13,7 +13,7 @@ exports.handler = async (event) => {
 
   const options = {
     method: "GET",
-    // url: "https://sky-scrapper.p.rapidapi.com/api/v1/flights/searchFlights",
+    url: "https://sky-scrapper.p.rapidapi.com/api/v1/flights/searchFlights",
     url: "",
     params: {
       originSkyId: from,
