@@ -1,14 +1,14 @@
 import React, {useState} from "react";
 import "./App.css";
 import FlightResults from "./components/FlightResults";
+import Loader from "./components/Loader";
 import SearchForm from "./components/SearchForm";
 const mockData = require("../src/mockFlights.json");
 
 function App() {
   const [flightsResults, setFlightResults] = useState(null);
-
+  const [loader, setLoader] = useState(false);
   const handleSearch = async (formData) => {
-    console.log("form data to be submitted to API : ", formData);
     const res = await fetch('/.netlify/functions/searchFlights', {
       method: 'POST',
       body: JSON.stringify({
@@ -22,8 +22,9 @@ function App() {
       }),
     });
     const data = await res.json();
-    console.log("------------ API response ----------- : ", data);
+    setLoader(!loader);
     setFlightResults(mockData || []);
+    setLoader(!loader);
   };
 
   return (
@@ -32,7 +33,7 @@ function App() {
         Spotter Flights
       </h1>
       <SearchForm onSearch={handleSearch} />
-      {flightsResults && <FlightResults results={flightsResults} />}
+      {loader ? <Loader/> : <FlightResults results={flightsResults}/> }
     </div>
   );
 }
